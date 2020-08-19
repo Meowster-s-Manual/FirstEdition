@@ -1,4 +1,4 @@
-#!/home/ubuntu/python_projects/the_book/dev_env/bin/python
+#!/home/ubuntu/python_projects/the_book/dev_env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
