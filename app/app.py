@@ -1,10 +1,12 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
+from flask_cors import CORS
 from flask_pymongo import PyMongo
 
 
 app = Flask(__name__)
+CORS(app)
 app.config["MONGO_URI"] = "mongodb://localhost:27017/meowster"
 mongo = PyMongo(app)
 
@@ -32,4 +34,4 @@ def top_search():
     return jsonify(dump)
 
 if __name__=="__main__":
-    app.run(debug = True, port = 5000)
+    app.run(debug = True, port = 8081, host = "192.168.1.111")
