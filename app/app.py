@@ -7,7 +7,7 @@ from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 CORS(app)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/meowster"
+app.config["MONGO_URI"] = "mongodb://localhost:8081/meowster"
 mongo = PyMongo(app)
 
 # Get all from DB
