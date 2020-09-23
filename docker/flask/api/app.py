@@ -7,7 +7,7 @@ from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 CORS(app)
-app.config["MONGO_URI"] = "mongodb://localhost:8081/meowster"
+app.config["MONGO_URI"] = "mongodb://meowster:3L3T3@db:27017/meowster"
 mongo = PyMongo(app)
 
 # Get all from DB
@@ -34,4 +34,4 @@ def top_search():
     return jsonify(dump)
 
 if __name__=="__main__":
-    app.run(debug = True, port = 8084)
+    app.run(debug = True, port = 8084, host = "0.0.0.0")

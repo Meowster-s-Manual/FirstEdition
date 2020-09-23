@@ -9,8 +9,6 @@ services:
             MONGO_INITDB_ROOT_PASSWORD: 3L3T3
             MONGO_INITDB_DATABASE: meowster
             MONGODB_DATA_DIR: /data/db
-        ports:
-            - 8081:8081
         volumes:
             - ~/Documents/mongodbdata:/data/db
     
@@ -22,6 +20,6 @@ services:
         depends_on: 
             - db
         ports:
-            - 8084:8084
+            - "8084:8084"
         volumes:
             - ./flask/api:/api
