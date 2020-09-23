@@ -3,13 +3,25 @@ version: "3.8"
 services:
     db:
         image: mongo:4.2-bionic
+        container_name: mongodb
         environment: 
             MONGO_INITDB_ROOT_USERNAME: meowster
             MONGO_INITDB_ROOT_PASSWORD: 3L3T3
             MONGO_INITDB_DATABASE: meowster
             MONGODB_DATA_DIR: /data/db
         ports:
-            - target: 8081
-              published: 8081
+            - 8081:8081
         volumes:
             - ~/Documents/mongodbdata:/data/db
+    
+    api:
+        build:
+            context: ./flask
+            dockerfile: Dockerfile
+        container_name: flask_api
+        depends_on: 
+            - db
+        ports:
+            - 8084:8084
+        volumes:
+            - ./flask/api:/api
