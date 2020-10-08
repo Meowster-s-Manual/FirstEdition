@@ -12,6 +12,12 @@ export default new Router({
       path: '/ping',
       name: 'Ping',
       component: Ping,
+    },
+    {
+      // Change component to actual home page
+      path: '/',
+      name: 'Ping',
+      component: Ping,
     }
   ],
 });

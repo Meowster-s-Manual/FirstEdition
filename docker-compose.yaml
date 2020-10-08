@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+    vue:
+        build:
+            context: ./client
+            dockerfile: Dockerfile
+        container_name: vue_ui
+        ports:
+            - "8081:8081"
+            - "8082:8082"
+        volumes:
+            - $PWD/client/src:/client/src
+            - $PWD/client/public:/client/public
+    db:
+        build:
+            context: ./mongodb
+            dockerfile: Dockerfile
+        container_name: mongodb
+        environment: 
+            MONGO_INITDB_ROOT_USERNAME: meowster
+            MONGO_INITDB_ROOT_PASSWORD: 3L3T3
+            MONGO_INITDB_DATABASE: meowster
+            MONGODB_DATA_DIR: /data/db
+        volumes:
+            - $PWD/mongodbdata:/data/db
+    
+    api:
+        build:
+            context: ./flask
+            dockerfile: Dockerfile
+        container_name: flask_api
+        depends_on: 
+            - db
+        ports:
+            - "8084:8084"
+        volumes:
+            - ./flask/api:/api
