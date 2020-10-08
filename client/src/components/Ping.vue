@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     getData() {
-      axios.get('http://70.112.90.159:61425/').then(dump =>{
+      axios.get('http://localhost:8084').then(dump =>{
 	this.msg = dump.data;
       }).catch(err =>{
         console.log(err);

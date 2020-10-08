@@ -10,4 +10,3 @@ mongo --username meowster --password 3L3T3
 docker cp dump.json mongodb:dump.json
 #mongo import inside the container
 mongoimport --jsonArray --db meowster --collection chest --username meowster --password 3L3T3 --authenticationDatabase admin --file dump.json
-
