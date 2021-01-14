@@ -10,8 +10,10 @@
   "dependencies": {
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11",
-    "vue-router": "^3.4.3"
+    "vue": "^2.6.12",
+    "vue-router": "^3.4.3",
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.20.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
